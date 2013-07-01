@@ -1,0 +1,22 @@
+// this is a DSLD file
+// start off creating a custom DSL Descriptor for your Groovy DSL
+
+// The following snippet adds the 'newProp' to all types that are a subtype of GroovyObjects
+// contribute(currentType(subType('groovy.lang.GroovyObject'))) {
+//   property name : 'newProp', type : String, provider : 'Sample DSL', doc : 'This is a sample.  You should see this in content assist for GroovyObjects: <pre>newProp</pre>'
+// }
+
+
+contribute(currentType(subType('tadp.dependency.injector.InjectionEngine'))) {
+	method name : 'armateUn', type : String, provider : 'Sample DSL', doc : 'Con esto le decimos al motor que se instancie y arme algo usando una config <pre>armateUn</pre>'
+	method name : 'usando', type : String, provider : 'Sample DSL', doc : 'Con esto le decimos al motor que se instancie y arme algo usando una config <pre>armateUn</pre>'
+}
+
+contribute(currentType(subType('java.lang.Object'))) {
+	property name : 'un', type : String, provider : 'Sample DSL', doc : 'Nada, solo una palabra: <pre>un</pre>'
+}
+
+contribute(currentType(subType('tadp.injector.dsl.DSLDefinition'))) {
+	method name : '	motorDeInyeccion', type : String, provider : 'Sample DSL', doc : 'AAAAh!!config <pre>armateUn</pre>'
+	property name : 'un', type : String, provider : 'Sample DSL', doc : 'Nada, solo una palabra: <pre>un</pre>'
+}
