@@ -28,9 +28,8 @@ class DSLDefinitionTest {
 		def velador = bean
 		
 		Assert.assertTrue(velador.getLuz() instanceof LamparitasOsram);
-		Assert.assertEquals("Cuchuflo", velador.getMarca());
+		Assert.assertTrue(velador.getEnchufe() instanceof EnchufeTresPatas);
 		Assert.assertNull(velador.getAlto());
-		Assert.assertEquals(2, velador.getMamparas().size());
 	}
 	
 	@Test
@@ -57,7 +56,6 @@ class DSLDefinitionTest {
 		Assert.assertEquals(LamparitasOsram.class, relBuilder.quien)
 		relBuilder.como(Alumbrable.class)
 		Assert.assertEquals(Alumbrable.class, relBuilder.esQue)
-		
 		
 		Assert.assertEquals(1, ib.relations.size())
 		Assert.assertNotNull(ib.relations.get(0).quien)

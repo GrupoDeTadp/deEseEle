@@ -63,7 +63,7 @@ class InjectionBuilder{
 	
 }
 
-class GenericStructure extends SetterInjectionStructure
+class GenericStructure extends InjectionStructure
 {
 	def relations
 	GenericStructure(relaciones){
@@ -74,8 +74,8 @@ class GenericStructure extends SetterInjectionStructure
 	
 	@Override
 	void defineParts() {
-		relations.each {
-					define(it.quien, it.esQue);
+		relations.each {			
+					define(it.esQue, it.quien);
 				}
 	}
 	/*@Override
